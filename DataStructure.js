@@ -102,8 +102,8 @@ var DataStructure = (function(){
             this.key = key;
             this.value = value;
             this.toString = function() {
-    return '[' + this.key + ' - ' + this.value + ']';
-  };
+              return '[' + this.key + ' - ' + this.value + ']';
+            };
           };
 
       var loselosehash = function hashFunc(key){
@@ -147,8 +147,8 @@ var DataStructure = (function(){
 
           var current = table[position].getHead();
 
-              //while the next node is defined (iterate until tail);
-          while(current.next){
+              //while the next node is defined (iterate until tail) since tail is null;
+          while(current){
 
             if(current.element.key === key){
               return current.element.value;
@@ -158,12 +158,6 @@ var DataStructure = (function(){
             current = current.next;
 
           }
-
-          //check in case first or last element
-          if (current.element.key === key){
-              return current.element.value;
-          }
-
 
       };
 
